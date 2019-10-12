@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>HackNotts</title>
+
+        <link rel="icon" type="image/ico"  href="./favicon.ico" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js" ></script>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <script src="background.js"></script>
+        <script src="client.js"></script>
+
+        <style>
+          * {
+              left:0;
+              top:0;
+              /*overflow: hidden;*/
+          }
+
+          body{
+            left:0;
+            top:0;
+            margin:0;
+            padding:0;
+              overflow: hidden;
+          }
+
+          #screenNum {
+              z-index: 100;
+              position: absolute;
+              top: 0;
+              left: 0;
+              color: white;
+              width: 600px;
+          }
+
+          .game_background {
+            top:0;
+            left:0;
+            position: absolute;
+            z-index: -1;
+            overflow: hidden;
+            align-content: center;
+            width:  1920px;
+            height: 1080px;
+          }
+
+          .game_canvas{
+              position: absolute;
+              z-index: 2;
+              overflow: hidden;
+              /*background-color: #2C2C34;*/
+              /*align-content: center;*/
+              width: 5760px;
+              height: 1080px;
+              /*background: url("bg.gif");*/
+              /*background-repeat: repeat;*/
+          }
+
+          #explosions {
+              overflow: hidden;
+              position: absolute;
+              width: 5760px;
+              height: 1080px;
+          }
+
+          #explosions div {
+              z-index: 4;
+              position: absolute;
+
+              width: 420px;
+              height: 270px;
+              background-size: cover;
+          }
+
+          #projectiles {
+              overflow: hidden;
+              position: absolute;
+              width: 5760px;
+              height: 1080px;
+          }
+
+          #projectiles div {
+              z-index: 5;
+              position: absolute;
+
+              width: 102px;
+              height: 40px;
+
+              background: url("projectile.gif");
+              background-size: cover;
+          }
+
+          #spaceship {
+              width: 641px;
+              height: 212px;
+              position: absolute;
+              background: url("spaceship.gif");
+          }
+
+            #missiles {
+                overflow: hidden;
+                position: absolute;
+                width: 5760px;
+                height: 1080px;
+            }
+
+            #missiles div {
+                z-index: 3;
+                position: absolute;
+
+                width: 310px;
+                height: 72px;
+            }
+
+            #missiles .m1 {
+                background: url("missile1.gif");
+                background-size: cover;
+            }
+
+            #missiles .m2 {
+              background: url("missile2.gif");
+              background-size: cover;
+            }
+
+            #missiles .m3 {
+              background: url("missile3.gif");
+              background-size: cover;
+            }
+
+            #missiles .m4 {
+              background: url("missile4.gif");
+              background-size: cover;
+            }
+
+            #missiles .m5 {
+              background: url("missile5.gif");
+              background-size: cover;
+            }
+
+            #missiles .m6 {
+              background: url("missile6.gif");
+              background-size: cover;
+            }
+
+            #missiles .m7 {
+              background: url("missile7.gif");
+              background-size: cover;
+            }
+
+            #missiles .m8 {
+              background: url("missile8.gif");
+              background-size: cover;
+            }
+
+            #missiles .m9 {
+              background: url("missile9.gif");
+              background-size: cover;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="game_background">
+          <canvas width="1920" height="1080"></canvas>
+        </div>
+
+        <div id="screenNum"></div>
+
+        <div id="game_canvas" class="game_canvas">
+            <div id="missiles"></div>
+            <div id="projectiles"></div>
+            <div id="explosions"></div>
+            <div id="spaceship"></div>
+        </div>
+
+    </body>
+</html>
