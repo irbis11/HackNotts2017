@@ -10,7 +10,6 @@ function pageLoad() {
         if (typeof state !== 'undefined') {
             var screenNum = state.screenNum;
             var offset = (3 - screenNum) * 1920;
-            // $('#screenNum').html("Screen #" + screenNum + ", offset: " + offset + ", lives: " + state.lives + ", dead: " + state.gameover);
             $('#screenNum').html("#" + screenNum);
 
             $('#screenNum').css('left', offset);
@@ -23,11 +22,6 @@ function pageLoad() {
             // console.log(state);
             $('#spaceship').css('top', state.spaceshipY + 'px');
             $('#spaceship').css('left', state.spaceshipX + 'px');
-            // if (state.collided) {
-            //     $('#spaceship').css('border', '1px solid red');
-            // } else {
-            //     $('#spaceship').css('border', '1px solid green');
-            // }
             $('#missiles').empty();
             for (var i = 0; i < state.missiles.length; i++) {
                 var missile = state.missiles[i];
@@ -40,7 +34,6 @@ function pageLoad() {
             }
             for (var i = 0; i < state.explosions.length; i++) {
                 var explosion = state.explosions[i];
-                // console.log(counter++);
                 if ($('#explosion' + explosion.eol).length === 0) {
                     $('#explosions').append('<div id="explosion' + explosion.eol + '" style="top: ' + explosion.y + 'px; left: ' + explosion.x + 'px; background: url(explosion.gif?' + explosion.eol + '); background-size: cover"></div>')
                     if ($('#explosions').children().length > 10) {
